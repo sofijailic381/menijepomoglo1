@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Stranica nije pronađena — Meni je pomoglo redizajn</title>
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#F2F1EC">
+<style>
+*{box-sizing:border-box}
+html,body{min-height:100%}
+body{margin:0;min-height:100vh;min-height:100dvh;display:grid;place-items:center;padding:24px;background:#F2F1EC;color:#17171A;font-family:system-ui,-apple-system,'Segoe UI',sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:36rem}
+.k{font-size:13px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:#6B6A66}
+h1{margin:14px 0 0;font-size:clamp(32px,6vw,52px);line-height:1.05;letter-spacing:-.03em;font-weight:600;text-wrap:balance}
+p{margin:14px 0 0;font-size:17px;line-height:1.55;color:#55544F}
+nav{margin-top:28px;display:flex;flex-wrap:wrap;gap:10px}
+a{display:inline-flex;align-items:center;min-height:44px;padding:10px 18px;border-radius:999px;border:1px solid #E2E0D8;background:#FFFFFF;color:#17171A;text-decoration:none;font-weight:600;font-size:15px}
+a:hover{border-color:#1F4BFF;color:#1F4BFF}
+a.p{background:#17171A;border-color:#17171A;color:#F2F1EC}
+a.p:hover{background:#1F4BFF;border-color:#1F4BFF;color:#FFFFFF}
+</style>
+</head>
+<body>
+<main>
+<div class="k">Greška 404</div>
+<h1>Ova stranica ne postoji.</h1>
+<p>Adresa je možda pogrešno ukucana ili je stranica premeštena.</p>
+<nav>
+<a class="p" id="home" href="./">Pregled redizajna</a>
+<a data-p="klinicki.html" href="klinicki.html">A · Klinički</a>
+<a data-p="zajednica.html" href="zajednica.html">B · Zajednica</a>
+<a data-p="bold.html" href="bold.html">C · Bold</a>
+</nav>
+</main>
+<script>
+(function(){
+  var s=location.pathname.split('/').filter(Boolean);
+  var base=(/\.github\.io$/i.test(location.hostname)&&s.length>1)?'/'+s[0]+'/':'/';
+  document.getElementById('home').href=base;
+  document.querySelectorAll('[data-p]').forEach(function(a){a.href=base+a.getAttribute('data-p');});
+})();
+</script>
+</body>
+</html>
